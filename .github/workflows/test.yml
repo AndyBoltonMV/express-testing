@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: refs/heads/testing
       - name: Install dependencies
@@ -24,13 +24,13 @@ jobs:
     if: ${{ needs.test.result == 'success' }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: refs/heads/testing
       - name: Set up Git
-        uses: rlespinasse/git-commit-data-action@v1.x
+        uses: rlespinasse/git-commit-data-action@v1.4
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v4.2.4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: dev
