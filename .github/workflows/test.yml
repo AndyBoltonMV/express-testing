@@ -11,7 +11,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          ref: refs/heads/${{ github.ref }}
+          ref: refs/heads/${{ github.head_ref }}
       - name: Install dependencies
         run: npm ci --dev
       - name: Run tests
