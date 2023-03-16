@@ -3,7 +3,7 @@ describe("broken", () => {
     let Andy;
     expect(Andy).toBe(true);
   });
-  it("Is Jordan", () => {
+  it("Is JordanSteve", () => {
     let Jordan = "fish";
     expect(Jordan).toBe("Fish");
   });
